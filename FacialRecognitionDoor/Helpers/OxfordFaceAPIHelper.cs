@@ -1,10 +1,10 @@
-﻿using HomeSecurityCameraApp.FaceRecognition;
+﻿using FacialRecognitionDoor.FacialRecognition;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace WindowsSmartDoor.Helpers
+namespace FacialRecognitionDoor.Helpers
 {
     /// <summary>
     /// Allows easy access to oxford functions such as adding a visitor to whitelist and checing to see if a visitor is on the whitelist

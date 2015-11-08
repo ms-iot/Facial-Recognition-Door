@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Windows.Media.SpeechSynthesis;
 using Windows.UI.Xaml.Controls;
 
-namespace WindowsSmartDoor.Helpers
+namespace FacialRecognitionDoor.Helpers
 {
     /// <summary>
     /// Utilizes SpeechSynthesizer to convert text to an audio message played through a XAML MediaElement

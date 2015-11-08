@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace HomeSecurityCameraApp.FaceRecognition
+namespace FacialRecognitionDoor.FacialRecognition
 {
     /// <summary>
     /// Data structure to store and manage Whitelist

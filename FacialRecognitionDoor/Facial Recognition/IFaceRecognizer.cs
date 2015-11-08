@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Windows.Storage;
 
-namespace HomeSecurityCameraApp.FaceRecognition
+namespace FacialRecognitionDoor.FacialRecognition
 {
     interface IFaceRecognizer
     {

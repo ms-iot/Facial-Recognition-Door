@@ -7,7 +7,7 @@ using Windows.Media.MediaProperties;
 using Windows.Storage;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace WindowsSmartDoor.Helpers
+namespace FacialRecognitionDoor.Helpers
 {
     /// <summary>
     /// Interacts with an attached camera. Allows one to easily access live webcam feed and capture a photo.
@@ -123,7 +123,7 @@ namespace WindowsSmartDoor.Helpers
         /// </summary>
         private string GenerateNewFileName()
         {
-            return DateTime.UtcNow.ToString("yyyy.MMM.dd HH-mm-ss") + " Smart Door";
+            return DateTime.UtcNow.ToString("yyyy.MMM.dd HH-mm-ss") + " Facial Recognition Door";
         }
 
         /// <summary>

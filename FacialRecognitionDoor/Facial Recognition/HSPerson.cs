@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HomeSecurityCameraApp.FaceRecognition
+namespace FacialRecognitionDoor.FacialRecognition
 {
     class HSPerson
     {

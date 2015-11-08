@@ -1,4 +1,4 @@
-﻿namespace WindowsSmartDoor
+﻿namespace FacialRecognitionDoor
 {
     /// <summary>
     /// General constant variables
@@ -8,11 +8,12 @@
         // This variable should be set to true for devices, like the Raspberry Pi, that do not have GPU support
         public const bool DisableLiveCameraFeed = false;
 
-        // Oxford Face API Primary key:
-        public const string OxfordAPIKey = "f54dcbff038344b1975e923384b4ae65";
-
+        // Oxford Face API Primary should be entered here
+        // You can obtain a subscription key for Face API by following the instructions here: https://www.projectoxford.ai/doc/general/subscription-key-mgmt
+        public const string OxfordAPIKey = "OXFORD_KEY_HERE";
+        
         // Name of the folder in which all Whitelist data is stored
-        public const string WhiteListFolderName = "Smart Door Whitelist";
+        public const string WhiteListFolderName = "Facial Recognition Door Whitelist";
 
     }
 
@@ -21,14 +22,14 @@
     /// </summary>
     public static class SpeechContants
     {
-        public const string InitialGreetingMessage = "Welcome to the Windows Smart Door! Speech has been initialized.";
+        public const string InitialGreetingMessage = "Welcome to the Facial Recognition Door! Speech has been initialized.";
 
         public const string VisitorNotRecognizedMessage = "Sorry! I don't recognize you, so I cannot open the door.";
         public const string NoCameraMessage = "Sorry! It seems like your camera has not been fully initialized.";
 
         public static string GeneralGreetigMessage(string visitorName)
         {
-            return "Welcome to the Windows Smart Door " + visitorName + "! I will open the door for you.";
+            return "Welcome to the Facial Recognition Door " + visitorName + "! I will open the door for you.";
         }
     }
 
@@ -43,7 +44,7 @@
         // The GPIO pin that the door lock is attached to
         public const int DoorLockPinID = 4;
 
-        // The ammount of time in seconds that the door will remain unlocked for
+        // The amount of time in seconds that the door will remain unlocked for
         public const int DoorLockOpenDurationSeconds = 10;
     }
 }

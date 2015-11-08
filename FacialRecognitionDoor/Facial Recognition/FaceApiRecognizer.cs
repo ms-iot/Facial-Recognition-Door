@@ -6,9 +6,8 @@ using Microsoft.ProjectOxford.Face;
 using System.Diagnostics;
 using Windows.Storage;
 using Microsoft.ProjectOxford.Face.Contract;
-using WindowsSmartDoor;
 
-namespace HomeSecurityCameraApp.FaceRecognition
+namespace FacialRecognitionDoor.FacialRecognition
 {
     class FaceApiRecognizer : IFaceRecognizer
     {
@@ -171,7 +170,7 @@ namespace HomeSecurityCameraApp.FaceRecognition
             Debug.WriteLine("Start building whitelist from " + _whitelistFolder.Path);
 
             // calc progress step
-            var fileCnt = await FaceApiUtils.GetFilesCntInWhitelist(_whitelistFolder);
+            var fileCnt = await FaceApiUtils.GetFileCountInWhitelist(_whitelistFolder);
             var progressStep = (100.0 - progressCnt) / fileCnt;
 
             var subFolders = await _whitelistFolder.GetFoldersAsync();

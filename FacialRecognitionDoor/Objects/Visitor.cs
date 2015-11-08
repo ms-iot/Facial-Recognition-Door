@@ -1,10 +1,10 @@
 ﻿using Windows.Storage;
 using Windows.UI.Xaml.Media.Imaging;
 
-namespace WindowsSmartDoor.Objects
+namespace FacialRecognitionDoor.Objects
 {
     /// <summary>
-    /// Contains information such as name and location of ID images in storage for each authorized visitor to the Windows Smart Door
+    /// Contains information such as name and location of ID images in storage for each authorized visitor to the Facial Recognition Door
     /// </summary>
     class Visitor
     {

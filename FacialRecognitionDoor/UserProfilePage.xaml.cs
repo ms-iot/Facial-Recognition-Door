@@ -5,12 +5,12 @@ using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-using WindowsSmartDoor.Helpers;
-using WindowsSmartDoor.Objects;
+using FacialRecognitionDoor.Helpers;
+using FacialRecognitionDoor.Objects;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace WindowsSmartDoor
+namespace FacialRecognitionDoor
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.

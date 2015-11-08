@@ -1,4 +1,4 @@
-﻿using HomeSecurityCameraApp.FaceRecognition;
+﻿using FacialRecognitionDoor.FacialRecognition;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,12 +10,12 @@ using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
-using WindowsSmartDoor.Helpers;
-using WindowsSmartDoor.Objects;
+using FacialRecognitionDoor.Helpers;
+using FacialRecognitionDoor.Objects;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace WindowsSmartDoor
+namespace FacialRecognitionDoor
 {
     public sealed partial class MainPage : Page
     {
@@ -254,7 +254,7 @@ namespace WindowsSmartDoor
                 catch
                 {
                     // General error. This can happen if there are no visitors authorized in the whitelist
-                    Debug.WriteLine("WARNING: Oxford just through a general expception.");
+                    Debug.WriteLine("WARNING: Oxford just threw a general expception.");
                 }
                 
                 if(recognizedVisitors.Count > 0)

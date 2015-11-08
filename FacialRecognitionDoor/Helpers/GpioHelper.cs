@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using Windows.Devices.Gpio;
 
-namespace WindowsSmartDoor.Helpers
+namespace FacialRecognitionDoor.Helpers
 {
     /// <summary>
     /// Interacts with device GPIO controller in order to control door lock and monitor doorbell

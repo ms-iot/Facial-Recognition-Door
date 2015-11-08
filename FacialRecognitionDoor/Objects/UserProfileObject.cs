@@ -1,6 +1,6 @@
-﻿using WindowsSmartDoor.Helpers;
+﻿using FacialRecognitionDoor.Helpers;
 
-namespace WindowsSmartDoor.Objects
+namespace FacialRecognitionDoor.Objects
 {
     /// <summary>
     /// Object specifically to be passed to UserProfilePage that contains an instance of the WebcamHelper and a Visitor object

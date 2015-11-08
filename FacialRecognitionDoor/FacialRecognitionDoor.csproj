@@ -7,8 +7,8 @@
     <ProjectGuid>{308386C8-AAB3-416E-89A0-CB22D59E3128}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>WindowsSmartDoor</RootNamespace>
-    <AssemblyName>WindowsSmartDoor</AssemblyName>
+    <RootNamespace>FacialRecognitionDoor</RootNamespace>
+    <AssemblyName>FacialRecognitionDoor</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10240.0</TargetPlatformVersion>
@@ -99,7 +99,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Constants.cs" />
-    <Compile Include="Facial Recognition\FaceApiHelper.cs" />
+    <Compile Include="Facial Recognition\FaceApiUtils.cs" />
     <Compile Include="Facial Recognition\FaceApiRecognizer.cs" />
     <Compile Include="Facial Recognition\FaceApiWhitelist.cs" />
     <Compile Include="Facial Recognition\FaceRecognitionException.cs" />
