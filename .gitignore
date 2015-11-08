@@ -196,3 +196,4 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 FacialRecognitionDoor/project.lock.json
+FaceApiClient/project.lock.json
