@@ -1,6 +1,7 @@
 ﻿using FacialRecognitionDoor.FacialRecognition;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Windows.Storage;
 
@@ -48,10 +49,18 @@ namespace FacialRecognitionDoor.Helpers
         /// </summary>
         public async static void AddUserToWhitelist(string name, StorageFolder photoFolder)
         {
-            // Acquires instance of Oxford SDK controller
-            FaceApiRecognizer sdkController = FaceApiRecognizer.Instance;
-            // Asynchronously adds user to whitelist
-            await sdkController.AddPersonToWhitelistAsync(photoFolder, name);
+            try
+            {
+                // Acquires instance of Oxford SDK controller
+                FaceApiRecognizer sdkController = FaceApiRecognizer.Instance;
+                // Asynchronously adds user to whitelist
+                await sdkController.AddPersonToWhitelistAsync(photoFolder, name);
+            }
+            catch (Exception)
+            {
+                Debug.WriteLine("Failed to add user to whitelist.");
+            }
+            
         }
 
         /// <summary>
@@ -59,10 +68,17 @@ namespace FacialRecognitionDoor.Helpers
         /// </summary>
         public async static void AddImageToWhitelist(StorageFile imageFile, string name)
         {
-            // Acquires instance of Oxford SDK controller
-            FaceApiRecognizer sdkController = FaceApiRecognizer.Instance;
-            // Asynchronously adds image to whitelist
-            await sdkController.AddImageToWhitelistAsync(imageFile, name);
+            try
+            {
+                // Acquires instance of Oxford SDK controller
+                FaceApiRecognizer sdkController = FaceApiRecognizer.Instance;
+                // Asynchronously adds image to whitelist
+                await sdkController.AddImageToWhitelistAsync(imageFile, name);
+            }
+            catch
+            {
+                Debug.WriteLine("Failed to add image.");
+            }
         }
 
         /// <summary>

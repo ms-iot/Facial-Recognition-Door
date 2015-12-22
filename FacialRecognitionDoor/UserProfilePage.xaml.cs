@@ -45,9 +45,6 @@ namespace FacialRecognitionDoor
 
                 // Sets the local WebcamHelper as the passed through intialized one
                 webcam = userProfileParameters.WebcamHelper;
-
-                //.StartCameraPreview();
-
             }
             catch
             {
