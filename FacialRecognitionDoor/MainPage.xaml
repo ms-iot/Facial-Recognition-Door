@@ -32,7 +32,7 @@
         <StackPanel x:Name="LiveFeedPanel" Margin="0, 10" Grid.Row="0" Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
             <CaptureElement x:Name='WebcamFeed' Loaded="WebcamFeed_Loaded"/>
         </StackPanel>
-        <StackPanel x:Name="AnalysingVisitorGrid" Grid.Column="2" VerticalAlignment="Center" Visibility="Collapsed">
+        <StackPanel x:Name="AnalysingVisitorGrid" Grid.Column="2" VerticalAlignment="Center" Margin="0,0,30,0" Visibility="Collapsed">
             <ProgressRing IsActive="True" Width="113" Height="80" Foreground="White" VerticalAlignment="Center" Margin="0,0,0,10"/>
             <TextBlock VerticalAlignment="Center" FontSize="26.667" Grid.Row="1" Text="Analyzing visitor..." TextWrapping="WrapWholeWords" TextAlignment="Center"/>
             <TextBlock VerticalAlignment="Center" FontSize="21.333" Grid.Row="1" Text="This may take some time depending on your hardware." TextWrapping="WrapWholeWords" TextAlignment="Center" FontStyle="Italic"/>
