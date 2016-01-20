@@ -5,8 +5,8 @@
     /// </summary>
     public static class GeneralConstants
     {
-        // This variable should be set to true for devices, like the Raspberry Pi, that do not have GPU support
-        public const bool DisableLiveCameraFeed = false;
+        // This variable should be set to false for devices, unlike the Raspberry Pi, that have GPU support
+        public const bool DisableLiveCameraFeed = true;
 
         // Oxford Face API Primary should be entered here
         // You can obtain a subscription key for Face API by following the instructions here: https://www.projectoxford.ai/doc/general/subscription-key-mgmt

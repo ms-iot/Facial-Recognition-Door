@@ -50,11 +50,6 @@ namespace FacialRecognitionDoor.Helpers
                 doorbellPin.SetDriveMode(GpioPinDriveMode.Input);
             }
 
-            
-
-            // Sets doorbell pin drive mode to input as button will be used to input information
-            doorbellPin.SetDriveMode(GpioPinDriveMode.Input);
-
             // Opens the GPIO pin that interacts with the door lock system
             doorLockPin = gpioController.OpenPin(GpioConstants.DoorLockPinID);
             if(doorLockPin == null)
