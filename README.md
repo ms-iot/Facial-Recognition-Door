@@ -12,3 +12,7 @@ With the introduction of Microsoft's Project Oxford, facial recognition applicat
 
 The step-by-step instruction for building this project can be found on https://microsoft.hackster.io/en-US/windows-iot/windows-iot-facial-recognition-door-e087ce
 
+
+===
+
+This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/). For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments. 
