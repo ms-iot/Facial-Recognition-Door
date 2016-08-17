@@ -74,19 +74,20 @@ namespace FacialRecognitionDoor.FacialRecognition
             await _faceApiClient.TrainPersonGroupAsync(WhitelistId);
 
             TrainingStatus status;
+            
 
             while(true)
             {
                 status = await _faceApiClient.GetPersonGroupTrainingStatusAsync(WhitelistId);
 
                 // if still running, continue to check status
-                if(status.Status == "running")
+                if(status.Status == Status.Running)
                 {
                     continue;
                 }
 
                 // if timeout or failed
-                if (status.Status != "succeeded")
+                if (status.Status != Status.Succeeded)
                 {
                     isSuccess = false;
                 }
@@ -126,17 +127,17 @@ namespace FacialRecognitionDoor.FacialRecognition
 
                     Debug.WriteLine("Deleted old group");
                 }
-                catch(ClientException ce)
-                { 
-                    // Group not found
-                    if(ce.Error.Code == "PersonGroupNotFound")
+                catch (FaceAPIException fe)
+                {
+                    if (fe.ErrorCode == "PersonGroupNotFound")
                     {
-                        Debug.WriteLine("The group doesn't exists before");
+                        Debug.WriteLine("The person group doesn't exist");
                     }
                     else
                     {
-                        throw ce;
+                        throw fe;
                     }
+
                 }
 
                 await _faceApiClient.CreatePersonGroupAsync(WhitelistId, "White List");
@@ -144,10 +145,11 @@ namespace FacialRecognitionDoor.FacialRecognition
 
                 await BuildWhiteListAsync(progress, progressCnt);
             }
-            catch(ClientException ce)
+            
+            catch(FaceAPIException fe)
             {
                 isSuccess = false;
-                Debug.WriteLine("ClientException in CreateWhitelistFromFolderAsync : " + ce.Error.Code);
+                Debug.WriteLine("FaceAPIException in CreateWhitelistFromFolderAsync : " + fe.ErrorMessage);
             }
             catch(Exception e)
             {
@@ -235,8 +237,18 @@ namespace FacialRecognitionDoor.FacialRecognition
         /// <returns></returns>
         private async Task AddFace(Guid personId, Guid faceId, string imagePath)
         {
-            await _faceApiClient.AddPersonFaceAsync(WhitelistId, personId, faceId, imagePath);
-            _whitelist.AddFace(personId, faceId, imagePath);
+
+            // prevent running synchronous call on UI thread
+            await Task.Run(() =>
+            {
+                using (Stream imageStream = File.OpenRead(imagePath))
+                {
+                    _faceApiClient.AddPersonFaceAsync(WhitelistId, personId, imageStream);
+                }
+                _whitelist.AddFace(personId, faceId, imagePath);
+            });
+
+
         }
 
         /// <summary>
@@ -374,7 +386,7 @@ namespace FacialRecognitionDoor.FacialRecognition
         /// <returns></returns>
         private async Task<Guid> CreatePerson(string personName, StorageFolder personFolder)
         {
-            var ret = await _faceApiClient.CreatePersonAsync(WhitelistId, null, personName);
+            var ret = await _faceApiClient.CreatePersonAsync(WhitelistId, personName);
             var personId = ret.PersonId;
 
             _whitelist.AddPerson(personId, personName, personFolder.Path);
@@ -495,7 +507,7 @@ namespace FacialRecognitionDoor.FacialRecognition
                 if(result.Candidates.Length > 0)
                 {
                     var personName = _whitelist.GetPersonNameById(result.Candidates[0].PersonId);
-                    Debug.WriteLine("Face ID Confidence: " + Math.Round(result.Candidates[0].Confidence * 100, 1) + "%"); 
+                    Debug.WriteLine("Face ID Confidence: " + Math.Round(result.Candidates[0].Confidence * 100, 1) + "%");
                     recogResult.Add(personName);
                 }
             }

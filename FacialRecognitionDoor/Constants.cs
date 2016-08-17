@@ -9,7 +9,7 @@
         public const bool DisableLiveCameraFeed = true;
 
         // Oxford Face API Primary should be entered here
-        // You can obtain a subscription key for Face API by following the instructions here: https://www.projectoxford.ai/doc/general/subscription-key-mgmt
+        // You can obtain a subscription key for Face API by following the instructions here: https://www.microsoft.com/cognitive-services/en-us/sign-up
         public const string OxfordAPIKey = "OXFORD_KEY_HERE";
         
         // Name of the folder in which all Whitelist data is stored

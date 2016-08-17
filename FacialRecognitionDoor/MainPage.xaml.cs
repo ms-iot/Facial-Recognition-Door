@@ -12,6 +12,7 @@ using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using FacialRecognitionDoor.Helpers;
 using FacialRecognitionDoor.Objects;
+using Microsoft.ProjectOxford.Face;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
@@ -250,6 +251,10 @@ namespace FacialRecognitionDoor
                             Debug.WriteLine("WARNING: No face detected in this image.");
                             break;
                     }
+                }
+                catch (FaceAPIException faceAPIEx)
+                {
+                    Debug.WriteLine("FaceAPIException in IsFaceInWhitelist(): " + faceAPIEx.Message);
                 }
                 catch
                 {
