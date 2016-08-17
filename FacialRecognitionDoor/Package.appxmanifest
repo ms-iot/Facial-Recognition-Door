@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="fc78a11d-a155-46d8-9ece-279bd886050b" Publisher="CN=v-etkust" Version="1.0.0.0" />
+  <Identity Name="fc78a11d-a155-46d8-9ece-279bd886050b" Publisher="CN=masatos" Version="1.0.1.0" />
   <mp:PhoneIdentity PhoneProductId="fc78a11d-a155-46d8-9ece-279bd886050b" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>FacialRecognitionDoor</DisplayName>
-    <PublisherDisplayName>v-etkust</PublisherDisplayName>
+    <PublisherDisplayName>masatos</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Dependencies>

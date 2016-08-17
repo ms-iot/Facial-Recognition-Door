@@ -1,4 +1,5 @@
 ﻿using FacialRecognitionDoor.FacialRecognition;
+using Microsoft.ProjectOxford.Face;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -55,6 +56,10 @@ namespace FacialRecognitionDoor.Helpers
                 FaceApiRecognizer sdkController = FaceApiRecognizer.Instance;
                 // Asynchronously adds user to whitelist
                 await sdkController.AddPersonToWhitelistAsync(photoFolder, name);
+            }
+            catch (FaceAPIException fe)
+            {
+                Debug.WriteLine("FaceAPIException in AddUserToWhitelist: " + fe.Message);
             }
             catch (Exception)
             {
