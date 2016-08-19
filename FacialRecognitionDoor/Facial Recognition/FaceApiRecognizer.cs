@@ -70,7 +70,7 @@ namespace FacialRecognitionDoor.FacialRecognition
             bool isSuccess = true;
 
             // Train whitelist after add all person
-            Debug.WriteLine("Start training whitelist...");
+            Debug.WriteLine("Start training whitelist: " + WhitelistId);
             await _faceApiClient.TrainPersonGroupAsync(WhitelistId);
 
             TrainingStatus status;
@@ -80,20 +80,22 @@ namespace FacialRecognitionDoor.FacialRecognition
             {
                 status = await _faceApiClient.GetPersonGroupTrainingStatusAsync(WhitelistId);
 
-                // if still running, continue to check status
-                if(status.Status == Status.Running)
+                // wait for training to complete
+                if (status.Status != Status.Running)
                 {
-                    continue;
+                    Debug.WriteLine("GetPersonGroupTrainingStatusAsync stopped running:" + status.Message);
+                    if (status.Status == Status.Failed)
+                    {
+                        isSuccess = false;
+                    }
+                    break;
                 }
 
-                // if timeout or failed
-                if (status.Status != Status.Succeeded)
-                {
-                    isSuccess = false;
-                }
-                break;
+                await Task.Delay(1000);
+                Debug.WriteLine("GetPersonGroupTrainingStatusAsync still running:" + status.Message);
             }
 
+            Debug.WriteLine("GetPersonGroupTrainingStatusAsync end result: " + isSuccess);
             return isSuccess;
         }
 
