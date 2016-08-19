@@ -254,7 +254,7 @@ namespace FacialRecognitionDoor
                 }
                 catch (FaceAPIException faceAPIEx)
                 {
-                    Debug.WriteLine("FaceAPIException in IsFaceInWhitelist(): " + faceAPIEx.Message);
+                    Debug.WriteLine("FaceAPIException in IsFaceInWhitelist(): " + faceAPIEx.ErrorMessage);
                 }
                 catch
                 {

@@ -59,7 +59,7 @@ namespace FacialRecognitionDoor.Helpers
             }
             catch (FaceAPIException fe)
             {
-                Debug.WriteLine("FaceAPIException in AddUserToWhitelist: " + fe.Message);
+                Debug.WriteLine("FaceAPIException in AddUserToWhitelist: " + fe.ErrorMessage);
             }
             catch (Exception)
             {
