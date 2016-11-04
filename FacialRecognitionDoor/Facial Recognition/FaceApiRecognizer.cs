@@ -241,11 +241,11 @@ namespace FacialRecognitionDoor.FacialRecognition
         {
 
             // prevent running synchronous call on UI thread
-            await Task.Run(() =>
+            await Task.Run(async() =>
             {
                 using (Stream imageStream = File.OpenRead(imagePath))
                 {
-                    _faceApiClient.AddPersonFaceAsync(WhitelistId, personId, imageStream);
+                    AddPersistedFaceResult result = await _faceApiClient.AddPersonFaceAsync(WhitelistId, personId, imageStream);
                 }
                 _whitelist.AddFace(personId, faceId, imagePath);
             });
