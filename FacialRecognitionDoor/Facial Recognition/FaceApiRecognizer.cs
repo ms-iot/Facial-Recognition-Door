@@ -47,7 +47,7 @@ namespace FacialRecognitionDoor.FacialRecognition
         /// Initial Face Api client
         /// </summary>
         private FaceApiRecognizer() {
-            _faceApiClient = new FaceServiceClient(GeneralConstants.OxfordAPIKey);
+            _faceApiClient = new FaceServiceClient(GeneralConstants.OxfordAPIKey, GeneralConstants.FaceAPIEndpoint);
         }
         #endregion
 
