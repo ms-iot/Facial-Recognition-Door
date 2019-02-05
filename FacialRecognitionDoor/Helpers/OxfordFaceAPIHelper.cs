@@ -9,7 +9,7 @@ using Windows.Storage;
 namespace FacialRecognitionDoor.Helpers
 {
     /// <summary>
-    /// Allows easy access to oxford functions such as adding a visitor to whitelist and checing to see if a visitor is on the whitelist
+    /// Allows easy access to oxford functions such as adding a visitor to whitelist and checking to see if a visitor is on the whitelist
     /// </summary>
     static class OxfordFaceAPIHelper
     {
@@ -38,7 +38,7 @@ namespace FacialRecognitionDoor.Helpers
                 savedWhitelistId = id;
             }
 
-            // Builds whitelist from exisiting whitelist folder
+            // Builds whitelist from existing whitelist folder
             await sdkController.CreateWhitelistFromFolderAsync(savedWhitelistId, whitelistFolder, null);
 
             // Return true to indicate that Oxford was initialized successfully
